@@ -1,0 +1,1 @@
+nohup node app.js > httprequest.log 2>&1 &
