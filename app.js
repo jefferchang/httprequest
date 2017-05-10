@@ -14,7 +14,11 @@ app.get('/request', function (req, r) {
                 .charset('utf-8')
                 .end(function (err, res) {
                     if (res) {
-                        r.send(res.text);
+                        if(res.text){
+                            r.send(res.text);
+                        }else{
+                            r.send(res);
+                        }
                     }else{
                         r.send("no data");
                     }
@@ -24,7 +28,11 @@ app.get('/request', function (req, r) {
                 .charset('utf-8')
                 .end(function (err, res) {
                     if (res) {
-                        r.send(res.text);
+                        if(res.text){
+                            r.send(res.text);
+                        }else{
+                            r.send(res);
+                        }
                     }else{
                         r.send("no data");
                     }
