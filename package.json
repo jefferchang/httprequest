@@ -1,0 +1,25 @@
+{
+  "name": "httprequest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefferchang/httprequest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefferchang/httprequest/issues"
+  },
+  "homepage": "https://github.com/jefferchang/httprequest#readme",
+  "devDependencies": {
+    "express": "^4.15.2",
+    "path": "^0.12.7",
+    "superagent": "^3.5.2",
+    "superagent-charset": "^1.2.0"
+  }
+}

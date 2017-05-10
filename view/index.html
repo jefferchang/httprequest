@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container-fluid_">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>POST请求</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <input class="form-control" value="" name="post_url" id="post_url">
+            </form>
+            <div id="post_data" class="divpadding">
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" id="post_btn">发送</button>
+        </div>
+    </div>
+    <hr>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>GET请求</h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <input class="form-control" value="" name="get_url" id="get_url">
+            </form>
+            <div id="get_data"  class="divpadding">
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" id="get_btn">发送</button>
+        </div>
+    </div>
+</div>
+</body>
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    $("#post_btn").click(function () {
+        var postUrl = $("#post_url").val();
+        if ($.trim(postUrl) != '') {
+            $.ajax({
+                url: "/request",
+                data: {url: postUrl,method_:"POST"},
+                success: function (data) {
+                    $("#post_data").html(data);
+                },
+                error: function (data) {
+                    $("#post_data").html(data);
+                }
+            })
+        }
+    });
+
+    $("#get_btn").click(function () {
+        var getUrl = $("#get_url").val();
+        if ($.trim(getUrl) != '') {
+            $.ajax({
+                url: "/request",
+                data: {url: getUrl,method_:"GET"},
+                success: function (data) {
+                    $("#get_data").html(data);
+                },
+                error: function (data) {
+                    $("#get_data").html(data);
+                }
+            })
+        }
+    });
+</script>
+</html>
+
